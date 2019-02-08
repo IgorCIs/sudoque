@@ -1,6 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import * as reducers from './reducers';
-import { getPositionByIndex } from '../libs/XY.js'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
