@@ -1,0 +1,34 @@
+@import './variables'
+
+.container
+    width: 100% 
+    padding-right: $containerPadding
+    padding-left: $containerPadding
+    margin-right: auto
+    margin-left: auto
+
+    @for $i from length($containerWidths) through 1
+        @media(min-width: nth($mediaList, $i))
+            max-width: nth($containerWidths, $i)
+
+.wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+.fsa
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    width: 100%
+    height: 100%
+    position: absolute
+
+.controlls-hover
+    transition: background .3s
+    &:hover
+        background: rgba($green, 0.2)
+
+    &:active
+        background: rgba($green, 0.5)

@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body {
+  box-sizing: border-box
+}
+
+*, *:before, *:after {
+  box-sizing: inherit
+} 
+
+[tabindex]  {
+  border: unset;
+  outline: unset
+}

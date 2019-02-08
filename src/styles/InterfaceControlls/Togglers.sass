@@ -1,0 +1,103 @@
+@import './../variables'
+@import './../classes'
+
+.controlls
+    flex-wrap: wrap
+    display: flex
+    border-left: 1px solid  $thinBorder 
+    .toggler
+        border-right: 1px solid $thinBorder
+        border-bottom: 1px solid $thinBorder
+        width: 50%
+        padding: 10px 0
+        text-align: center
+        cursor: pointer
+        font-size: 14px
+        color: $thinBlack
+
+        @extend .controlls-hover
+
+        .text
+            margin-top: 5px
+            
+        .logo
+            height: 35px
+            background-size: contain
+            background-position: 50% 50%
+            background-repeat: no-repeat
+
+        &.notes
+            .logo
+                background-image: url('./../../media/edit.svg')
+
+        &.undo
+            .logo
+                background-image: url('./../../media/undo.svg')
+
+        &.tip
+            .logo
+                background-image: url('./../../media/light-bulb.svg')
+
+        &.clear
+            .logo
+                background-image: url('./../../media/eraser.svg')
+
+    .notes
+        position: relative
+        &:before
+            transition: all .3s
+            padding: 5px 10px
+            content: 'off'
+            display: block
+            left: -3px
+            top: 3px
+            position: absolute
+            color: white
+            border-top-right-radius: 5px
+            border-bottom-right-radius:  5px
+            background: darken($thinBorder, 10)
+        
+        &:after
+            content: ""
+            display: block
+            top: 28px
+            left: -3px
+            width: 3px
+            height: 2px
+            position: absolute
+            background: darken($thinBorder, 10)
+            transition: all .3s
+            
+        &.active
+            &:before
+                background: green
+                content: 'on'
+            &:after
+                background: green
+
+
+    .tip
+        position: relative
+        &:before
+            transition: all .3s
+            color: white
+            font-weight: 600
+            content: "Ты справишься без подсказок"
+            justify-content: center
+            align-items: center
+            display: flex
+            @extend .fsa
+            background: green
+            opacity: 0
+
+        &:hover
+            &:before
+                opacity: 1
+
+        &:active
+            &:before
+                opacity: 1
+                content: "))"
+                background: lighten(green, 5)
+            
+            
