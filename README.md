@@ -1,5 +1,6 @@
-# Sudoque [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app)
- Classic sudoku created with React and Redux
+# Sudoque [![Build Status](https://travis-ci.org/IgorCIs/sudoque.svg?branch=master)](https://travis-ci.org/IgorCIs/sudoque)
+
+Classic sudoku created with React and Redux 
 
 ## Run app
 
