@@ -16,4 +16,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## License
 
-Create React App is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).
+Sudoque is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).
