@@ -1,14 +1,14 @@
 {
   "main.css": "/sudoque/static/css/main.6292c851.chunk.css",
-  "main.js": "/sudoque/static/js/main.53166183.chunk.js",
-  "main.js.map": "/sudoque/static/js/main.53166183.chunk.js.map",
-  "static/js/1.bc28a9df.chunk.js": "/sudoque/static/js/1.bc28a9df.chunk.js",
-  "static/js/1.bc28a9df.chunk.js.map": "/sudoque/static/js/1.bc28a9df.chunk.js.map",
+  "main.js": "/sudoque/static/js/main.3405e99d.chunk.js",
+  "main.js.map": "/sudoque/static/js/main.3405e99d.chunk.js.map",
+  "static/js/1.62343f63.chunk.js": "/sudoque/static/js/1.62343f63.chunk.js",
+  "static/js/1.62343f63.chunk.js.map": "/sudoque/static/js/1.62343f63.chunk.js.map",
   "runtime~main.js": "/sudoque/static/js/runtime~main.d575353f.js",
   "runtime~main.js.map": "/sudoque/static/js/runtime~main.d575353f.js.map",
   "static/media/Togglers.sass": "/sudoque/static/media/undo.b2be8508.svg",
   "static/css/main.6292c851.chunk.css.map": "/sudoque/static/css/main.6292c851.chunk.css.map",
   "index.html": "/sudoque/index.html",
-  "precache-manifest.509f936beff5bd2015aefa99e7f70473.js": "/sudoque/precache-manifest.509f936beff5bd2015aefa99e7f70473.js",
+  "precache-manifest.a92d8e5bb08908851eff8b11a37c9b8a.js": "/sudoque/precache-manifest.a92d8e5bb08908851eff8b11a37c9b8a.js",
   "service-worker.js": "/sudoque/service-worker.js"
 }

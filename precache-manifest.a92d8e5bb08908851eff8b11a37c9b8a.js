@@ -20,19 +20,19 @@ self.__precacheManifest = [
     "url": "/sudoque/static/js/runtime~main.d575353f.js"
   },
   {
-    "revision": "531661836e154a203e04",
-    "url": "/sudoque/static/js/main.53166183.chunk.js"
+    "revision": "3405e99d094b8fb44019",
+    "url": "/sudoque/static/js/main.3405e99d.chunk.js"
   },
   {
-    "revision": "bc28a9dff999a095abcb",
-    "url": "/sudoque/static/js/1.bc28a9df.chunk.js"
+    "revision": "62343f63fd5cacd29af1",
+    "url": "/sudoque/static/js/1.62343f63.chunk.js"
   },
   {
-    "revision": "531661836e154a203e04",
+    "revision": "3405e99d094b8fb44019",
     "url": "/sudoque/static/css/main.6292c851.chunk.css"
   },
   {
-    "revision": "30f9d3d8f522bf008f6e328af53c3fe1",
+    "revision": "ae60606941bc9601848be863bd6a4497",
     "url": "/sudoque/index.html"
   }
 ];
