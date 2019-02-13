@@ -11,7 +11,7 @@ const initialState = {
     //     difficulty: '',
         notesInput: false
     },
-    cells: ('370680000100074803008100060720040630030802010015060049080006400403720001000018026').split('').map((value, id) => ({
+    cells: Array(81).fill(0).map((value, id) => ({
         id,
         selected: false,
         conflict: false,

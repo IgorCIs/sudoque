@@ -5,10 +5,10 @@ import Numpad from './Numpad';
 import Controlls from './Controlls';
 import './../../styles/InterfaceControlls/InterfaceControlls.sass'
 
-const Interface = ({ selectedCell, cells, game, toggleInput=f=>f, setCellValue=f=>f }) => {
+const Interface = ({ selectedCell, cells, game, newGame=f=>f, toggleInput=f=>f, setCellValue=f=>f }) => {
     return (
         <div className='interfaceControlls'>
-            <NewGame/>
+            <NewGame newGame={newGame}/>
             <Numpad onClick={value => selectedCell && setCellValue(selectedCell, value, cells, game.notesInput)}/>
             <Controlls 
                     clearClick={() => selectedCell && setCellValue(selectedCell, 0, cells, game.notesInput)}

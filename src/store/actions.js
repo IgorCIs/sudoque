@@ -34,10 +34,17 @@ const setNoteValue = (id, value) =>
         value 
     })
 
+const newGame = (scheme) => 
+    ({
+        type: c.NEW_GAME,
+        scheme
+    })
+
 export {
     setCellValue,
     setSelectedCell,
     onCellSetValue,
     toggleInputType,
-    setNoteValue
+    setNoteValue,
+    newGame
 }

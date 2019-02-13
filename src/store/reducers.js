@@ -46,10 +46,10 @@ const cell = (state = {}, action) => {
                         state.notes :
                         replaceItems(state.notes, state.notes.indexOf(action.value), 0),
 
-                conflict: getNearbyCells(state, action.cells).some(c => {
+                conflict: !action.cell.fixed ? getNearbyCells(state, action.cells).some(c => {
                     const valueToCompare = c.id === action.cell.id ? !action.cell.fixed && action.value : c.value
                     return state.value === valueToCompare && !!valueToCompare
-                })
+                }) : state.conflict
             }
 
         case c.SET_NOTE_VALUE: 
@@ -62,6 +62,16 @@ const cell = (state = {}, action) => {
                         replaceItems(state.notes, action.value - 1, !!~state.notes.indexOf(action.value) ? 0 : action.value) :
                         Array(state.notes.length).fill(0)
                 }
+
+        case c.NEW_GAME: 
+            return {
+                ...state,
+                value: action.scheme[state.id],
+                notes: [...Array(9)].fill(0),
+                selected: false,
+                conflict: false,
+                fixed: !!action.scheme[state.id]
+            }
         
         default: 
             return state
@@ -73,6 +83,7 @@ const cells = (state = [], action) => {
         case c.SET_CELL_VALUE:
         case c.SET_CELL_SELECTED:
         case c.ON_SET_VALUE:
+        case c.NEW_GAME:
         case c.SET_NOTE_VALUE:
             return state.map(c => cell(c, action))
 

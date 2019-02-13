@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import './../../styles/InterfaceControlls/NewGame.sass'
 
 const data = {
-    Easy: 'DIFFICULTY_EASY',
-    Medium: 'DIFFICULTY_MEDIUM',
-    Hard: 'DIFFICULTY_HARD',
-    Expert: 'DIFFICULTY_EXPERT',
+    Easy: 'easy',
+    Medium: 'medium',
+    Hard: 'hard',
+    Expert: 'expert',
 }
 
 const Option = ({ value, onClick=f=>f }) => (
@@ -29,6 +29,13 @@ class NewGame extends Component {
         this.setState(state => ({ opened: !state.opened }))
     }
 
+    startNewGame(difficulty) {
+        return () => {
+            this.props.newGame(difficulty)
+            this.toggleOpened()
+        }
+    }
+
     render() {
         const { opened } = this.state
         
@@ -38,8 +45,8 @@ class NewGame extends Component {
                 {opened ?
                     <ul className='options'>
                         {Object.keys(data).map((k, i) => (
-                        <Option value={k}   
-                                    onClick={this.toggleOpened}
+                            <Option value={k}   
+                                    onClick={this.startNewGame(data[k])}
                                     key={i}
                             />
                         ))} 

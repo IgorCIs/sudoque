@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Board from './ui/Board';
-import { setSelectedCell, onCellSetValue, setCellValue, toggleInputType, setNoteValue } from '../store/actions';
+import { setSelectedCell, onCellSetValue, setCellValue, toggleInputType, setNoteValue, newGame } from '../store/actions';
 import Interface from './ui/Interface';
 
 const setValueCell = dispatch => (cell, value, cells, notesInput) => {
@@ -45,6 +45,9 @@ const InterfaceControlls = connect(
             },
             toggleInput() {
                 dispatch(toggleInputType())
+            },
+            newGame(difficulty) {
+                dispatch(newGame('370680000100074803008100060720040630030802010015060049080006400403720001000018026'.split('').map(v => +v)))
             }
         })
 )(Interface)

@@ -10,7 +10,7 @@ const doesAddValue = (arr, value, add) => {
     return newArr
 }
 
-export {
+export {    
     doesAddValue,
     replaceItems
 }
