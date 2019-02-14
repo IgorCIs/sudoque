@@ -5,17 +5,17 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
     game: {
-    //     started: false,
-    //     paused: false,
-    //     startTime: null,
-    //     difficulty: '',
+        //     paused: false,
+        //     startTime: null,
+        //     difficulty: '',
+        started: false,
         notesInput: false
     },
-    cells: Array(81).fill(0).map((value, id) => ({
+    cells: Array(81).fill(null).map((value, id) => ({
         id,
         selected: false,
         conflict: false,
-        value: +value,
+        value: value,
         notes: [...Array(9).fill(0)],
         fixed: !!+value,
     }))  

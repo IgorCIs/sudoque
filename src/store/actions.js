@@ -40,11 +40,17 @@ const newGame = (scheme) =>
         scheme
     })
 
+const onSolve = () => 
+    ({
+        type: c.ON_SOLVE
+    })
+
 export {
     setCellValue,
     setSelectedCell,
     onCellSetValue,
     toggleInputType,
     setNoteValue,
-    newGame
+    newGame,
+    onSolve
 }

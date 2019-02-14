@@ -11,6 +11,12 @@ const game = (state = {}, action) => {
                 notesInput: !state.notesInput   
             }
         
+        case c.NEW_GAME:
+            return {
+                ...state,
+                started: true
+            }            
+            
         default: 
             return state
     }
@@ -63,6 +69,7 @@ const cell = (state = {}, action) => {
                         Array(state.notes.length).fill(0)
                 }
 
+        case c.ON_SOLVE:
         case c.NEW_GAME: 
             return {
                 ...state,
@@ -70,6 +77,7 @@ const cell = (state = {}, action) => {
                 notes: [...Array(9)].fill(0),
                 selected: false,
                 conflict: false,
+                same: false,
                 nearby: false,
                 fixed: !!action.scheme[state.id]
             }
@@ -86,6 +94,7 @@ const cells = (state = [], action) => {
         case c.ON_SET_VALUE:
         case c.NEW_GAME:
         case c.SET_NOTE_VALUE:
+        case c.ON_SOLVE:
             return state.map(c => cell(c, action))
 
         default: 

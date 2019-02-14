@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { HotKeys } from 'react-hotkeys'
 import { keyMap } from '../../hotkeys';
 
-const Board = ({ cells, selectedCell, notesInput, selectCell=f=>f, setCellValue=f=>f, toggleInput=f=>f }) => {
+const Board = ({ cells, selectedCell, notesInput, started, onSolve=f=>f, selectCell=f=>f, setCellValue=f=>f, toggleInput=f=>f }) => {
     const hotkeys = {
         ...Array(11).fill(0).reduce((prev, n, i) => ({
             ...prev,
@@ -17,12 +17,14 @@ const Board = ({ cells, selectedCell, notesInput, selectCell=f=>f, setCellValue=
         MOVE_TOP: () => selectCell(cells[selectedCell.id - 9]),
         CHANGE_INPUT_TYPE: () => toggleInput(),
     }
+    
+    cells.every(cell => cell.value && !cell.conflict) && onSolve()
 
     return (
         <HotKeys className='board' handlers={hotkeys} keyMap={keyMap}>
             {cells.map(cell => (
                 <Cell {...cell}
-                    onClick={() => selectCell(cell)}
+                    onClick={() => started && selectCell(cell)}
                     key={cell.id}
                 />
             ))}

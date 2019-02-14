@@ -1,13 +1,16 @@
 import { connect } from 'react-redux'
-import Board from './ui/Board';
-import { setSelectedCell, onCellSetValue, setCellValue, toggleInputType, setNoteValue, newGame } from '../store/actions';
-import Interface from './ui/Interface';
+import Board from './ui/Board'
+import { setSelectedCell, onCellSetValue, setCellValue, toggleInputType, setNoteValue, newGame, onSolve } from '../store/actions'
+import Interface from './ui/Interface'
+import boards from '../libs/boards';
 
-const setValueCell = dispatch => (cell, value, cells, notesInput) => {
-    !notesInput ? 
-    dispatch(setCellValue(cell.id, value)) :
-    dispatch(setNoteValue(cell.id, value))
-    dispatch(onCellSetValue(cell, notesInput ? 0 : value, cells))
+const setValueCell = dispatch => (selected, value, cells, notesInput) => {
+    if(selected) {
+        !notesInput  ? 
+        dispatch(setCellValue(selected.id, value)) :
+        dispatch(setNoteValue(selected.id, value))
+        dispatch(onCellSetValue(selected, notesInput ? 0 : value, cells))
+    }
 }
 
 const CellsBoard = connect(
@@ -15,10 +18,11 @@ const CellsBoard = connect(
         ({
             cells: state.cells,
             notesInput: state.game.notesInput,
+            started: state.game.started,
             selectedCell: state.cells.find(cell => cell.selected)
         }),
     dispatch => 
-    ({
+        ({
             selectCell(cell) {
                 cell && dispatch(setSelectedCell(cell.id, cell.value))
             },
@@ -27,6 +31,9 @@ const CellsBoard = connect(
             },
             toggleInput() {
                 dispatch(toggleInputType())
+            },
+            onSolve() {
+                dispatch(onSolve())
             }
         })
 )(Board)
@@ -38,7 +45,7 @@ const InterfaceControlls = connect(
             cells: state.cells,
             game: state.game
         }),
-    dispatch =>     
+    dispatch =>
         ({
             setCellValue(cell, value, cells, notesInput) {
                 setValueCell(dispatch)(cell, value, cells, notesInput)
@@ -47,7 +54,12 @@ const InterfaceControlls = connect(
                 dispatch(toggleInputType())
             },
             newGame(difficulty) {
-                dispatch(newGame('370680000100074803008100060720040630030802010015060049080006400403720001000018026'.split('').map(v => +v)))
+                const board = boards[difficulty]
+                const scheme = board[Math.floor(Math.random() * board.length)]
+                                .split('')
+                                .map(item => +item)
+
+                dispatch(newGame(scheme))
             }
         })
 )(Interface)
