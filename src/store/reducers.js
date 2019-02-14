@@ -70,6 +70,7 @@ const cell = (state = {}, action) => {
                 notes: [...Array(9)].fill(0),
                 selected: false,
                 conflict: false,
+                nearby: false,
                 fixed: !!action.scheme[state.id]
             }
         
