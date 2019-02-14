@@ -1,7 +1,7 @@
 {
   "main.css": "/sudoque/static/css/main.6292c851.chunk.css",
-  "main.js": "/sudoque/static/js/main.3405e99d.chunk.js",
-  "main.js.map": "/sudoque/static/js/main.3405e99d.chunk.js.map",
+  "main.js": "/sudoque/static/js/main.185b1bb2.chunk.js",
+  "main.js.map": "/sudoque/static/js/main.185b1bb2.chunk.js.map",
   "static/js/1.62343f63.chunk.js": "/sudoque/static/js/1.62343f63.chunk.js",
   "static/js/1.62343f63.chunk.js.map": "/sudoque/static/js/1.62343f63.chunk.js.map",
   "runtime~main.js": "/sudoque/static/js/runtime~main.d575353f.js",
@@ -9,6 +9,6 @@
   "static/media/Togglers.sass": "/sudoque/static/media/undo.b2be8508.svg",
   "static/css/main.6292c851.chunk.css.map": "/sudoque/static/css/main.6292c851.chunk.css.map",
   "index.html": "/sudoque/index.html",
-  "precache-manifest.a92d8e5bb08908851eff8b11a37c9b8a.js": "/sudoque/precache-manifest.a92d8e5bb08908851eff8b11a37c9b8a.js",
+  "precache-manifest.bc6d7a5976f10799213503e8f8f0d012.js": "/sudoque/precache-manifest.bc6d7a5976f10799213503e8f8f0d012.js",
   "service-worker.js": "/sudoque/service-worker.js"
 }
